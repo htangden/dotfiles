@@ -1,0 +1,4 @@
+configuration {
+    font: "JetBrains Mono 14";
+}
+@theme "/home/hugo/.config/rofi/themes/gruvbox-custom.rasi"

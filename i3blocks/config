@@ -1,0 +1,29 @@
+[time]
+command=date '+<span foreground="#458588" weight="bold">Time:</span> <span foreground="#ebdbb2">%H:%M</span>'
+interval=5
+markup=pango
+
+[memory]
+command=free -h | awk '/^Mem/ {printf "<span foreground=\"#458588\" weight=\"bold\">RAM:</span> <span foreground=\"#ebdbb2\">%s / %s</span>\n", $3, $2}'
+interval=10
+markup=pango
+
+[volume]
+command=amixer get Master | awk -F'[][]' '/Left:/ {printf "<span foreground=\"#458588\" weight=\"bold\">Vol:</span> <span foreground=\"#ebdbb2\">%s</span>\n", $2}'
+interval=2
+markup=pango
+
+[battery]
+command=/home/hugo/.config/i3blocks/scripts/battery.sh
+interval=60
+markup=pango
+
+[pomodoro]
+command=tomaten status
+interval=1
+markup=pango
+
+[pomodoro daily]
+command=tomaten daily-goal-status
+interval=30
+markup=pango

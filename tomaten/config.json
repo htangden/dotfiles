@@ -1,0 +1,14 @@
+{
+  "colors": {
+    "work": "#458588",
+    "break": "#689d68",
+    "text": "#ebdbb2"
+  },
+  "messages": {
+    "relax": "--:--",
+    "back_to_work": "--:--",
+    "notification_title_break": "Tomaten🍅⏲️",
+    "notification_title_work": "Tomaten🍅⏲️"
+  },
+  "send_notifications": true
+}

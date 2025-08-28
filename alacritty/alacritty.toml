@@ -1,0 +1,5 @@
+[general]
+import = [
+    "~/.config/alacritty/editor.toml",
+    "~/.config/alacritty/themes/themes/gruvbox_dark.toml"
+]

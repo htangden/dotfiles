@@ -1,0 +1,133 @@
+# Alacritty Editor Configuration
+
+# Font configuration
+[font]
+normal = { family = "JetBrains Mono", style = "Regular" }
+bold = { family = "JetBrains Mono", style = "Bold" }
+italic = { family = "JetBrains Mono", style = "Italic" }
+bold_italic = { family = "JetBrains Mono", style = "Bold Italic" }
+
+# Font size in points
+size = 9.0
+
+[window]
+# Window dimensions (changes require restart)
+dimensions = { columns = 120, lines = 35 }
+
+
+# Spread additional padding evenly around the terminal content
+dynamic_padding = true
+
+# Window decorations
+decorations = "full"  # full, none, transparent, buttonless
+
+# Window title
+title = "Alacritty"
+
+# Allow terminal applications to change Alacritty's window title
+dynamic_title = true
+
+# Scrolling
+[scrolling]
+# Maximum number of lines in the scrollback buffer
+history = 10000
+
+# Multiplier for the scrolling speed
+multiplier = 3
+
+# Cursor configuration
+[cursor]
+# Cursor style
+style = { shape = "Block", blinking = "On" }  # Block, Underline, Beam
+
+# Cursor blinking interval in milliseconds
+blink_interval = 500
+
+# If this is true, the cursor will be rendered as a hollow box when unfocused
+unfocused_hollow = true
+
+# Cursor thickness (only applies to underline and beam)
+thickness = 0.15
+
+# Mouse configuration
+[mouse]
+# Hide mouse cursor when typing
+hide_when_typing = true
+
+# Mouse bindings
+bindings = [
+    { mouse = "Middle", action = "PasteSelection" },
+    { mouse = "Right", action = "PasteSelection" },
+]
+
+# Terminal bell
+[bell]
+# Bell animation
+animation = "EaseOutExpo"  # Ease, EaseOut, EaseOutSine, EaseOutQuad, EaseOutCubic, EaseOutQuart, EaseOutQuint, EaseOutExpo, EaseOutCirc, Linear
+
+# Bell duration in milliseconds
+duration = 100
+
+# Bell color
+color = "#ff5555"
+
+# Selection configuration
+[selection]
+# When set to true, selected text will be copied to the primary clipboard
+save_to_clipboard = true
+
+# Semantic escape characters for word selection
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[env]
+# This value is used to set the `$TERM` environment variable for each instance
+TERM = "xterm-256color"
+
+# Key bindings (some useful additions)
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Control|Shift"
+action = "SpawnNewInstance"
+
+[[keyboard.bindings]]
+key = "Plus"
+mods = "Control"
+action = "IncreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Minus"
+mods = "Control"
+action = "DecreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Control"
+action = "ResetFontSize"
+
+[[keyboard.bindings]]
+key = "F11"
+action = "ToggleFullscreen"
+
+# Debug configuration (usually keep these off)
+[debug]
+# Display the time it takes to redraw each frame
+render_timer = false
+
+# Keep the log file after quitting Alacritty
+persistent_logging = false
+
+# Log level
+log_level = "Error"  # Off, Error, Warn, Info, Debug, Trace
+
+# Print all received window events
+print_events = false
