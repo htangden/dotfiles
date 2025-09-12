@@ -42,6 +42,12 @@ return {
             lspconfig.ts_ls.setup {
                 capabilities = capabilities
             }
+
+            -- RUST
+            lspconfig.rust_analyzer.setup {
+                capabilities = capabilities
+            }
+
         end,
     }
 }

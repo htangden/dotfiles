@@ -4,6 +4,8 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:JetBrains Mono 14
 
+default_border normal 0
+
 set $white #ebdbb2
 set $bg #282828
 set $red #cc241d
@@ -24,7 +26,7 @@ client.unfocused        $bg $bg $white $bg   $bg
 
 client.background       $white
 
-bindsym $mod+p exec tomaten pomodoro 25
+bindsym $mod+p exec tomaten start 30
 bindsym $mod+o exec tomaten break 5
 bindsym $mod+i exec tomaten break 30
 bindsym $mod+u exec tomaten finish
@@ -137,7 +139,6 @@ bar {
         active_workspace   $white $white $bg
         inactive_workspace $bg $bg $white
         urgent_workspace   $red $red $white
-        binding_mode       #d08770 #d08770 #000000
     }
 }
 
