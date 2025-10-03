@@ -1,8 +1,11 @@
 vim.g.mapleader = " "
 
-
 vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Exit insert mode' })
 vim.keymap.set('c', 'jk', '<Esc>', { desc = 'Exit insert mode' })
+
+vim.keymap.set('t', 'jk', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
+vim.keymap.set('n', '<leader>q', ':bd!<CR>', { desc = 'Close terminal' })
+vim.keymap.set('n', '<leader>t', ':terminal<CR>:startinsert<CR>', { desc = 'Open terminal' })
 
 vim.keymap.set("n", "<leader>ls", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>em", vim.diagnostic.open_float)
@@ -56,3 +59,5 @@ vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
 
+-- JUST FOR NOW, PLEASSE REMOVE LATER
+vim.keymap.set('n', '<leader>jt', ':set filetype=java<CR>', { desc = "Set filetype to java" })

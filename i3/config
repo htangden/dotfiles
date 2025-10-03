@@ -6,8 +6,10 @@ font pango:JetBrains Mono 14
 
 default_border normal 0
 
-set $white #ebdbb2
+set $text #ebdbb2
 set $bg #282828
+set $highlight #458588
+
 set $red #cc241d
 set $orange #d65d0e
 set $green #98971a
@@ -20,13 +22,13 @@ set $darkgray #1d2021
 set $lightgray #bdae93
 
 # class                 bor  bg text    ind child_border
-client.focused          $bg $blue $white $bg   $bg
-client.focused_inactive $bg $bg $white $bg   $bg
-client.unfocused        $bg $bg $white $bg   $bg
+client.focused          $bg $highlight $text $bg   $bg
+client.focused_inactive $bg $bg $text $bg   $bg
+client.unfocused        $bg $bg $text $bg   $bg
 
-client.background       $white
+client.background       $text
 
-bindsym $mod+p exec tomaten start 30
+bindsym $mod+p exec tomaten start 25
 bindsym $mod+o exec tomaten break 5
 bindsym $mod+i exec tomaten break 30
 bindsym $mod+u exec tomaten finish
@@ -49,8 +51,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym Print exec --no-startup-id flameshot gui
 bindsym $mod+Shift+s exec --no-startup-id flameshot gui
 
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
 
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
@@ -132,13 +134,13 @@ bar {
     status_command i3blocks
     colors {
         background $bg
-        statusline $white
+        statusline $text
         separator  $bg
 
-        focused_workspace  $blue $blue $white
-        active_workspace   $white $white $bg
-        inactive_workspace $bg $bg $white
-        urgent_workspace   $red $red $white
+        focused_workspace  $highlight $highlight $text
+        active_workspace   $text $white $bg
+        inactive_workspace $bg $bg $text
+        urgent_workspace   $red $red $text
     }
 }
 
