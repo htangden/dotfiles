@@ -3,11 +3,12 @@ vim.g.mapleader = " "
 vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Exit insert mode' })
 vim.keymap.set('c', 'jk', '<Esc>', { desc = 'Exit insert mode' })
 
+vim.keymap.set("n", "<leader>ls", "<cmd>NvimTreeToggle<CR>")
+
 vim.keymap.set('t', 'jk', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
 vim.keymap.set('n', '<leader>q', ':bd!<CR>', { desc = 'Close terminal' })
 vim.keymap.set('n', '<leader>t', ':terminal<CR>:startinsert<CR>', { desc = 'Open terminal' })
 
-vim.keymap.set("n", "<leader>ls", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>em", vim.diagnostic.open_float)
 vim.keymap.set("n", "<leader>hl", vim.cmd.nohlsearch)
 vim.keymap.set("n", "<leader>rr", "<cmd>Rest run<CR>")

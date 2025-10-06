@@ -6,7 +6,6 @@ vim.opt.relativenumber = true
 vim.o.scrolloff = 8
 vim.opt.cursorline = true
 
-
 -- TABBING	
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4

@@ -14,7 +14,7 @@ interval=1
 markup=pango
 
 [battery]
-command=/home/hugo/.config/i3blocks/scripts/battery.sh
+command=python3 /home/hugo/.config/i3blocks/scripts/battery.py --label "#458588" --value "#ebdbb2" --low_battery_bg "#cc241d"
 interval=60
 markup=pango
 

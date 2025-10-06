@@ -118,6 +118,11 @@ action = "ResetFontSize"
 key = "F11"
 action = "ToggleFullscreen"
 
+[[keyboard.bindings]]
+key = "Backspace"
+mods = "Control"
+chars = "\u001b\u007f"
+
 # Debug configuration (usually keep these off)
 [debug]
 # Display the time it takes to redraw each frame
