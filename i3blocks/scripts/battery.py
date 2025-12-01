@@ -17,7 +17,12 @@ def get_battery_info():
 
     # Extract time to empty
     time_match = re.search(r"time to empty:\s+([^\n]+)", output)
-    time_to_empty = time_match.group(1).strip() if time_match else "--"
+
+    if (time_match):
+        time_to_empty = time_match.group(1).strip()
+    else:
+        time_to_full_match = re.search(r"time to full:\s+([^\n]+)", output)
+        time_to_empty = time_to_full_match.group(1).strip() if time_to_full_match else "--"
 
     return percentage, time_to_empty
 

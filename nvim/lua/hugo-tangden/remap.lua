@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Exit insert mode' })
 vim.keymap.set('c', 'jk', '<Esc>', { desc = 'Exit insert mode' })
 
-vim.keymap.set("n", "<leader>ls", "<cmd>NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>ls", ":Ex<CR>")
 
 vim.keymap.set('t', 'jk', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
 vim.keymap.set('n', '<leader>q', ':bd!<CR>', { desc = 'Close terminal' })

@@ -34,6 +34,7 @@ bindsym $mod+o exec tomaten break 5
 bindsym $mod+i exec tomaten break 30
 bindsym $mod+u exec tomaten finish
 
+exec --no-startup-id xset s 1800 5
 exec --no-startup-id xss-lock -- ~/.config/xsecurelock/lock.sh
 bindsym $mod+Shift+x exec --no-startup-id ~/.config/xsecurelock/lock.sh
 

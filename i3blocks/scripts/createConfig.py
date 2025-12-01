@@ -26,11 +26,6 @@ blocks = [
         "interval": 5
     },
     {
-        "name": "memory",
-        "command": "free -h | awk '/^Mem/ {{printf \"<span foreground=\\\"{label}\\\" weight=\\\"bold\\\">RAM:</span> <span foreground=\\\"{value}\\\">%s / %s</span>\\n\", $3, $2}}'",
-        "interval": 10
-    },
-    {
         "name": "volume",
         "command": "amixer get Master | awk -F'[][]' '/Left:/ {{printf \"<span foreground=\\\"{label}\\\" weight=\\\"bold\\\">Vol:</span> <span foreground=\\\"{value}\\\">%s</span>\\n\", $2}}'",
         "interval": 1
@@ -46,11 +41,6 @@ blocks = [
         "command": "tomaten status",
         "interval": 1
     },
-    {
-        "name": "pomodoro daily",
-        "command": "tomaten daily-goal-status",
-        "interval": 5
-    }
 ]
 
 

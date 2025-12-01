@@ -30,7 +30,7 @@ return {
             local jdtls_path = vim.fn.expand("~/.local/share/java")
             local launcher_jar = vim.fn.glob(jdtls_path .. "/plugins/org.eclipse.equinox.launcher_1.7.0.v20250519-0528.jar")
 
-            require('lspconfig').jdtls.setup {
+            lspconfig.jdtls.setup {
               capabilities = capabilities,
               cmd = {
                 "java", -- uses the java in PATH (should be 21)
@@ -46,6 +46,33 @@ return {
                 "-configuration", jdtls_path .. "/config_linux",
                 "-data", vim.fn.expand("~/.local/share/java/workspace") -- or per-project workspace
               },
+            }
+
+            -- JULIA
+  
+            lspconfig.julials.setup{
+                cmd = {
+                    "julia",
+                    "--project=" .. vim.fn.expand("~/.julia/environments/nvim-lspconfig"),
+                    "--startup-file=no",
+                    "--history-file=no",
+                    "-e", [[
+                    using Pkg;
+                    Pkg.instantiate();  # make sure dependencies are resolved
+                    using LanguageServer, SymbolServer;
+                    depot_path = get(ENV, "JULIA_DEPOT_PATH", "");
+                    project_path = dirname(something(Base.current_project(), Base.load_path_expand(LOAD_PATH[2])));
+                    @info "Starting Julia LSP" VERSION project_path depot_path
+                    server = LanguageServer.LanguageServerInstance(stdin, stdout, project_path, depot_path);
+                    server.runlinter = true;
+                    run(server);
+                    ]]
+                },
+                filetypes = { "julia" },
+                root_dir = function(fname)
+                    return lspconfig.util.root_pattern("Project.toml", ".git")(fname)
+                    or vim.fn.getcwd()
+                end,
             }
 
         end,

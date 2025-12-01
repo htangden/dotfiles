@@ -3,11 +3,6 @@ command=date '+<span foreground="#458588" weight="bold">Time:</span> <span foreg
 interval=5
 markup=pango
 
-[memory]
-command=free -h | awk '/^Mem/ {printf "<span foreground=\"#458588\" weight=\"bold\">RAM:</span> <span foreground=\"#ebdbb2\">%s / %s</span>\n", $3, $2}'
-interval=10
-markup=pango
-
 [volume]
 command=amixer get Master | awk -F'[][]' '/Left:/ {printf "<span foreground=\"#458588\" weight=\"bold\">Vol:</span> <span foreground=\"#ebdbb2\">%s</span>\n", $2}'
 interval=1
@@ -21,9 +16,4 @@ markup=pango
 [pomodoro]
 command=tomaten status
 interval=1
-markup=pango
-
-[pomodoro daily]
-command=tomaten daily-goal-status
-interval=5
 markup=pango
